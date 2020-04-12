@@ -31,6 +31,6 @@ public class AccountController {
     public void save (Account account, HttpServletRequest request, HttpServletResponse response) throws IOException {
         accountService.saveAccount(account);
         response.sendRedirect(request.getContextPath()+"/account/findAll");
-        //加个注释
+        //加个注释啊啊啊
     }
 }
