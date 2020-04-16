@@ -11,6 +11,9 @@ public class Prime {
                 System.out.println(i);
             }
         }
+        double a=Math.random();
+        int b=(int)(a*100);
+        System.out.println(a+" "+b);
     }
     public static boolean isPrime(int n){
         boolean flag=true;
