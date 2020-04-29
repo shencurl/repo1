@@ -33,10 +33,24 @@ public class Run {
         System.out.println("我要停止它！stopThread="+Thread.currentThread().getName());
         printStringService.setContinuePrint(false);*/
         //不会出现死循环
-        PrintString2 printString2Service =new PrintString2();
+ /*       PrintString2 printString2Service =new PrintString2();
         new Thread(printString2Service).start();
         System.out.println("我要停止它！stopThread="+Thread.currentThread().getName());
-        printString2Service.setContinuePrint(false);
+        printString2Service.setContinuePrint(false);*/
+
+        //测试join
+        try {
+
+            ThreadB b=new ThreadB();
+            ThreadA a=new ThreadA(b);
+            a.start();
+            b.start();
+            b.join(2000);
+
+            System.out.println("main end "+System.currentTimeMillis());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
