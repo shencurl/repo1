@@ -19,4 +19,13 @@ public class 二叉树的层次遍历 {
         recur(root.right,level+1);
 
     }
+
+    public void recursive2(TreeNode root,int level){
+        if (root==null) return;
+        if (result.size()==level)result.add(new ArrayList<Integer>());
+        result.get(level).add(root.val);
+        recur(root.left,level+1);
+        recur(root.right,level+1);
+
+    }
 }
