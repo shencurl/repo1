@@ -9,9 +9,10 @@ public class 快速排序 {
         int temp=a[left];
         while (i<j){
             while (i<j&&a[j]>=temp)j--;
-            if (i<j)a[i]=a[j];
+            //i要++，j要--，不然碰巧出现两个相等又相邻的数会死循环。
+            if (i<j)a[i++]=a[j];
             while (i<j&&a[i]<=temp)i++;
-            if (i<j)a[j]=a[i];
+            if (i<j)a[j--]=a[i];
         }
         a[i]=temp;
         quickSort(a,left,i-1);
